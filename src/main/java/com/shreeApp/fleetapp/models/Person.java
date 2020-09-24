@@ -1,6 +1,7 @@
 package com.shreeApp.fleetapp.models;
 
-import java.util.Date;
+import java.time.LocalDate;
+//import java.util.Date;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -42,7 +45,9 @@ public class Person {
 	private State state;
 	private Integer stateid;
 	
-	private Date dateOfBirth;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private LocalDate dateOfBirth;
+	
 	private String city;
 	private String address;
 	private String phone;

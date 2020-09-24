@@ -1,5 +1,6 @@
 package com.shreeApp.fleetapp.models;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -30,7 +31,7 @@ public class Invoice {
 	private Integer id;
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")	
-	private Date invoiceDate;
+	private LocalDate invoiceDate;
 	
 	@ManyToOne
 	@JoinColumn(name="invoicestatusid", insertable=false, updatable=false)	

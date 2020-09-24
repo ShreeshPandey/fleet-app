@@ -11,6 +11,16 @@ public class AppController {
 		return "index";
 	}
 	
+	@GetMapping("/login")
+	public String login() {
+		return "login";
+	}
+	
+	@GetMapping("/logout")
+	public String logout() {
+		return "login";
+	}
+	
 	@GetMapping("/blank")
 	public String getBlank() {
 		return "blank";

@@ -1,5 +1,6 @@
 package com.shreeApp.fleetapp.models;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -33,12 +34,12 @@ public class VehicleHire {
 	private Integer vehicleid;
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")	
-	private Date dateOut;
+	private LocalDate dateOut;
 	
 	private String timeOut;
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")	
-	private Date dateIn;
+	private LocalDate dateIn;
 	
 	private String timeIn;
 	

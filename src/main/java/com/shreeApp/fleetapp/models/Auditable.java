@@ -3,6 +3,7 @@ package com.shreeApp.fleetapp.models;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Temporal;
+
 import static javax.persistence.TemporalType.TIMESTAMP;
 
 import java.util.Date;
@@ -17,6 +18,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @EntityListeners(AuditingEntityListener.class)
 public abstract class Auditable<U> {
 
+	
 	@CreatedBy
     protected U createdBy;
 

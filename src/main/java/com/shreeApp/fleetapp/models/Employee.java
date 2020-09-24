@@ -1,6 +1,7 @@
 package com.shreeApp.fleetapp.models;
 
-import java.util.Date;
+import java.time.LocalDate;
+//import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -33,6 +34,6 @@ public class Employee extends Person {
 	private Integer jobtitleid;
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")	
-	private Date hireDate;
+	private LocalDate hireDate;
 
 }

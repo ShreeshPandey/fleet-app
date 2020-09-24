@@ -4,7 +4,8 @@
 
 $('document').ready(function() {
 	
-	$('.table .btn-primary').on('click',function(event){		
+	$('.table .btn-primary').on('click',function(event){
+		
 		event.preventDefault();		
 		var href= $(this).attr('href');		
 		$.get(href, function(supplier, status){

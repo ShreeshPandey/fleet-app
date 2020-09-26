@@ -9,10 +9,10 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-import org.springframework.util.AntPathMatcher;
 
 @EnableWebSecurity
 @Configuration
@@ -28,8 +28,9 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.csrf().disable()
 			.authorizeRequests()
 			.antMatchers("/login","/resources/**","/css/**","/fonts/**","/img/**").permitAll()
-				.anyRequest()
-				.authenticated()
+			.antMatchers("/register","/resources/**","/css/**","/fonts/**","/img/**","/js/**").permitAll()
+			.antMatchers("/users/addNew").permitAll() 
+				.anyRequest().authenticated()
 			.and()
 			.formLogin()
 				.loginPage("/login").permitAll()
@@ -45,9 +46,14 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 	public AuthenticationProvider autheticationProvider() {
 		DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
 			provider.setUserDetailsService(userDetailsService);
-			provider.setPasswordEncoder(passwordEncoder());		
+			provider.setPasswordEncoder(bCryptPasswordEncoder());		
 		return provider;
 		
+	}
+	
+	@Bean
+	public BCryptPasswordEncoder bCryptPasswordEncoder() {
+		return new BCryptPasswordEncoder();
 	}
 	
 	@Bean

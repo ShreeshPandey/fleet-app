@@ -9,7 +9,7 @@
   <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
   <link rel="shortcut icon" href="img/favicon.png">
 
-  <title>Creative - Bootstrap Admin Template</title>
+  <title>Fleet Management System</title>
 
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -53,7 +53,7 @@
       </div>
 
       <!--logo start-->
-      <a href="index.html" class="logo">Nice <span class="lite">Admin</span></a>
+      <a href="index.html" class="logo">Fleet <span class="lite">App</span></a>
       <!--logo end-->
 
       <div class="nav search-row" id="top_menu">
@@ -235,7 +235,7 @@
                 <p class="blue">You have 4 new notifications</p>
               </li>
               <li>
-                <a href="#">
+                <a th:href="@{/profile}">
                                     <span class="label label-primary"><i class="icon_profile"></i></span>
                                     Friend Request
                                     <span class="small italic pull-right">5 mins</span>
@@ -280,7 +280,7 @@
             <ul class="dropdown-menu extended logout">
               <div class="log-arrow-up"></div>
               <li class="eborder-top">
-                <a href="#"><i class="icon_profile"></i> My Profile</a>
+                <a th:href="@{/profile}"><i class="icon_profile"></i> My Profile</a>
               </li>
               <li>
                 <a href="#"><i class="icon_mail_alt"></i> My Inbox</a>
